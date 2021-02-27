@@ -8,13 +8,18 @@ D3:    .byte 12
 main:
       LDR r3, LD_D1
       LDR r4, [r3]
+       MOV r1 , r3
+	BL EcrHexa32
 
       LDR r5, LD_D2
       LDRH r6, [r5]
+       MOV r1 , r5
+	BL EcrHexa16
 
       LDR r7, LD_D3
       LDRB r8, [r7]
-
+       MOV r1 , r7
+	BL EcrHexa8
 fin:  B exit  @ terminaison immédiate du processus (plus tard on saura faire mieux)
 
 LD_D1:   .word D1

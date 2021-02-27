@@ -11,7 +11,7 @@ cc: @ ne pas modifier cette partie
     @ la suite pourra etr emofifiee
     .word 12
     .word 0x11223344
-    .asciz "au revoir..."
+cd: .asciz "au revoir..."
 
     .text
     .global main
@@ -25,9 +25,10 @@ main:
 @ A COMPLETER
 
 @ impression de la chaine modifiee
-     ldr r1, LD_cc
+     ldr r1, LD_cd
      bl EcrChaine
 
 fin: B exit  @ terminaison immédiate du processus (plus tard on saura faire mieux)
 
 LD_cc: .word cc
+LD_cd: .word cd
