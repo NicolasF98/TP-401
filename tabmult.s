@@ -27,6 +27,7 @@ readloop:
     add r2, r1, r2
     ldr r1, [r2]
 
+
     add r0, r0, #1              @r0=r0+1
     b readloop
 finreadloop:
