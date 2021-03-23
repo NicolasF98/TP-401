@@ -18,6 +18,18 @@ main: push {lr}
 
     @ affichage du tableau
         @ a completer...
+    mov r0, #0
+readloop:
+    cmp r0, #100 
+    beq finreadloop                 @fin si r0=100
+    ldr r1, =debutTab
+    lsl r2, r0, #2
+    add r2, r1, r2
+    ldr r1, [r2]
+
+    add r0, r0, #1              @r0=r0+1
+    b readloop
+finreadloop:
 
 fin: pop {lr}
      bx lr
