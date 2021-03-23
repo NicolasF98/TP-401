@@ -1,5 +1,5 @@
    .data
-debutTAB: .skip 5*4
+debutTAB: .hword 5*4 
 
    .text
    .global main
