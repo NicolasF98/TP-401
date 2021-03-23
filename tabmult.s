@@ -24,6 +24,7 @@ readloop:
     beq finreadloop                 @fin si r0=100
     ldr r1, =debutTab
     lsl r2, r0, #2
+    ldr r1, [R2]
     add r2, r1, r2
     ldr r1, [r2]
 
