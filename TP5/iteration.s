@@ -21,5 +21,5 @@ fintq:  @ i-5 = 0
 
 fin:  BX LR
 
-ptr_debutTAB : .word debutTAB
+ptr_debutTAB : .hword debutTAB
 
