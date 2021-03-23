@@ -25,6 +25,7 @@ readloop:
     ldr r1, =debutTab
     lsl r2, r0, #2
     ldr r1, [R2]
+    bl EcrNdecimal32
     add r2, r1, r2
     ldr r1, [r2]
 
