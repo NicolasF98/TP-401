@@ -19,20 +19,12 @@ main: push {lr}
     @ affichage du tableau
         @ a completer...
     
-loop:
+looplig:
     cmp r0, #10 
-    bcs finloop
-    ldr, r1,adr_espace
+    bcs finlig
+    ldr r0, adr_barre
     bl EcrChn
-finloop:
-
-loopp:
-    cmp r0, #100
-    bcs finloopp
-    ldr, r1,adr_espace
-    bl EcrChn
-finloopp:
-
+finlig:
 
 fin: pop {lr}
      bx lr
