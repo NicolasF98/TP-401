@@ -18,6 +18,7 @@ main: push {lr}
 
     @ affichage du tableau
         @ a completer...
+
     mov r0, #0
 readloop:
     cmp r0, #100 
@@ -32,6 +33,22 @@ readloop:
     b readloop
 finreadloop:
 
+loop:
+    cmp r0, #10 
+    bcs finloop
+    ldr, r1,adr_espace
+    bl EcrChn
+finloop:
+
+loopp:
+    cmp r0, #100
+    bcs finloopp
+    ldr, r1,adr_espace
+    bl EcrChn
+finloopp:
+
+    ldr r1, adr_barre
+    bl EcrChn
 
 fin: pop {lr}
      bx lr
