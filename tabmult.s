@@ -18,13 +18,52 @@ main: push {lr}
 
     @ affichage du tableau
         @ a completer...
-    
-looplig:
-    cmp r0, #10 
-    bcs finlig
-    ldr r0, adr_barre
+    mov r0, #0
+    mov r3, #0
+
+bigl:
+    bl AlaLigne
+    mov r0,#1
+    cmp r3, #10
+    bcs fin
+
+    add r3, r3, #1
+    b loop
+
+loop:
+    cmp r0, #11
+    bcs bigl
+
+    ldr r1, adr_barre
     bl EcrChn
-finlig:
+    
+    mul r1, r0, r3
+
+    str r1, [r2]
+    bl EcrNdecim32
+
+esp:
+    cmp r1,#10
+    bcs fesp
+    ldr r1, adr_espace
+    bl EcrChn
+    bl EcrChn
+
+fesp:
+    cmp r1,#100
+    bcs fespp
+    ldr r1, adr_espace
+    bl EcrChn
+
+fespp:
+
+    add r0,r0,#1
+    b loop
+
+finloop:
+    ldr r1, adr_barre
+    bl EcrChn
+
 
 fin: pop {lr}
      bx lr
