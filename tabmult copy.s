@@ -18,20 +18,19 @@ main: push {lr}
 
     @ affichage du tableau
         @ a completer...
-    
-loop:
-    cmp r0, #10 
-    bcs finloop
-    ldr, r1,adr_espace
+    mov r0, #0
+readloop:
+    cmp r0, #100 
+    beq finreadloop                 @fin si r0=100
+    ldr r1, =debutTab
+    lsl r2, r0, #2
+    ldr r1, [R2]
     bl EcrChn
-finloop:
-
-loopp:
-    cmp r0, #100
-    bcs finloopp
-    ldr, r1,adr_espace
-    bl EcrChn
-finloopp:
+    add r2, r1, r2
+    ldr r1, [r2]
+    add r0, r0, #1              @r0=r0+1
+    b readloop
+finreadloop:
 
 
 fin: pop {lr}
