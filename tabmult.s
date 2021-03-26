@@ -46,7 +46,8 @@ compar:
     cmp r1,#10          @ r1 < 10 ?
     bcs comparr         @ si oui on va directement dans comparr 
 
-    ldr r1, adr_espace  @ on affiche 1 espace
+    ldr r1, adr_espace  @ on affiche 2 espace
+    bl EcrChn
     bl EcrChn
 
 comparr:
@@ -73,3 +74,4 @@ ptr_debutTab : .word debutTab
 adr_barre :    .word barre
 adr_espace :   .word espace
 adr_tirets :   .word tirets
+
