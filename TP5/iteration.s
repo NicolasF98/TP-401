@@ -1,10 +1,10 @@
    .data
-debutTAB: .hword 5*4 
+debutTAB: .skip 5*4 
 
    .text
    .global main
 main:
-   ldr r0, ptr_debutTAB
+   @ldr r0, ptr_debutTAB
 
      mov r3, #11                @ val <- 11
      mov r2, #0                 @ i <- 0
@@ -21,5 +21,5 @@ fintq:  @ i-5 = 0
 
 fin:  BX LR
 
-ptr_debutTAB : .hword debutTAB
+ptr_debutTAB : .word debutTAB
 
